@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: np87q4krw-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: np87q4krw-nodejs 
+  name: np87q4krw-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: np87q4krw-nodejs
+    weight: 100 
